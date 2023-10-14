@@ -29,6 +29,7 @@ aside {
     background-color: #c1cec1;
     padding: 20px;
     border-radius: 5px; /* Rounded edges */
+    margin-right: 10px; /* Add a small gap between side menu and main text */
 }
 
 ul {
