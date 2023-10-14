@@ -28,6 +28,7 @@ header {
 aside {
     background-color: #c1cec1;
     padding: 20px;
+    border-radius: 5px; /* Rounded edges */
 }
 
 ul {
