@@ -5,8 +5,8 @@ body {
     background-color: #c1cec1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
     min-height: 100vh;
 }
 
@@ -26,10 +26,10 @@ header {
 }
 
 aside {
-    background-color: #c1cec1;
+    background-color: #f0f0f0;
     padding: 20px;
-    border-radius: 5px; /* Rounded edges */
-    margin-right: 10px; /* Add a small gap between side menu and main text */
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
 ul {
@@ -43,18 +43,29 @@ li {
 
 main {
     padding: 20px;
+    text-align: center; /* Center text within the main section */
 }
 
 h1 {
     margin: 0;
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 24px;
 }
 
 section {
-    background-color: #f0f0f0; /* Background color for the sections */
+    background-color: #f0f0f0;
     padding: 20px;
     border-radius: 5px;
 }
 
+/* Set the "Projects" section background color to match the header */
+aside h2 {
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: left; /* Left-align text in the "Projects" section */
+}
+
 /* Add additional styles as needed */
+
 
