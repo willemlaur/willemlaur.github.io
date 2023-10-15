@@ -43,7 +43,7 @@ canvas {
 }
 
 .sidenav {
-    width: 160px; /* Set the width of the sidebar */
+    width: 200px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 100; /* Stay on top */
     top: 4%; /* Stay at the top */
@@ -54,7 +54,7 @@ canvas {
   }
 
   .sidenav h2 {
-    font-size: 25px;
+    font-size: 50px;
     color: #fff4e4;
     margin: 0; /* Reset margin to ensure proper alignment */
     padding: 6px 8px 0px 16px;
@@ -65,16 +65,16 @@ canvas {
     font-size: 15px;
     color: #fff4e4be;
     margin: 0; /* Reset margin to ensure proper alignment */
-    padding: 0px 8px 6px 16px;
+    padding: 0px 8px 6px 24px;
     line-height: 1.5; /* Set line-height to vertically center the text */
 }
 
   /* The navigation menu links */
   .sidenav a {
-    padding: 6px 8px 6px 16px;
+    padding: 10px 14px 10px 24px;
     z-index: 100;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 15px;
     color: #fff4e4;
     display: block;
   }
