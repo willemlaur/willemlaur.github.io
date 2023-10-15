@@ -1,71 +1,89 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #c1cec1;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    min-height: 100vh;
+
+html {
+    background-color: #161515;
+    /* border: 25px solid rgb(255, 255, 255); /* width, style, colour */     
 }
 
-header {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2.5vw solid #161515; /* 2% of the viewport width as border width */
+    z-index: 9999; /* Ensure it covers all other elements */
 }
 
+html, body {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+canvas {
+    position:absolute;    /* Take the element out of the normal document flow */
+    z-index:-1;           /* Place the element behind normal content */
+    top: 4%;                /* Start at top of viewport */
+    left: 2%;               /* Start at left edge of viewport */  
+    right: 2%;
+    bottom: 2%;
+}
 .container {
-    display: flex;
-    max-width: 800px;
-    margin-top: 20px;
-    background-color: #fff;
-    border-radius: 5px;
+    width: 96%;
+    height: 91vh; /* Use viewport height to ensure the borders at top and bottom */
+    margin: 2% auto; /* 2% left and right margin, 2% top margin, 2% bottom margin */
+    border: 1.5px solid #fff;
+    box-sizing: border-box;
+    position: relative; /* Required for absolute positioning */
 }
 
-aside {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    margin-right: 10px;
+.sidenav {
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 4%; /* Stay at the top */
+    left: 4%;
+    background-color: rgba(17, 17, 17, 0); /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+
+  .sidenav h2 {
+    font-size: 25px;
+    color: #fff4e4;
+    margin: 0; /* Reset margin to ensure proper alignment */
+    padding: 6px 8px 0px 16px;
+    line-height: 1.5; /* Set line-height to vertically center the text */
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.sidenav h3 {
+    font-size: 15px;
+    color: #fff4e4be;
+    margin: 0; /* Reset margin to ensure proper alignment */
+    padding: 0px 8px 6px 16px;
+    line-height: 1.5; /* Set line-height to vertically center the text */
 }
 
-li {
-    margin-bottom: 10px;
-}
-
-main {
-    padding: 20px;
-    text-align: center; /* Center text within the main section */
-}
-
-h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-/* Set the "Projects" section background color to match the header */
-aside h2 {
-    background-color: #fff;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: left; /* Left-align text in the "Projects" section */
-}
-
-/* Add additional styles as needed */
-
-
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff4e4;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #474141;
+  }
+  
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }

@@ -5,34 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Willem - Portfolio</title>
     <link rel="stylesheet" href="app.css">
+
 </head>
 <body>
-    <header>
-        <h1>Willem </h1>
-        <p>Budding Developer</p>
-    </header>
+    <canvas id="snow"> </canvas>
+    <script>
+            var Snow = {
+        el: "#snow", 
+        density: 40000, // higher = fewer bits
+        maxHSpeed: 2, // How much do you want them to move horizontally
+        minFallSpeed: 0.4,
+        canvas: "snow",
+        ctx: null, 
+        particles: [],
+        colors: [],
+        mp: 1,
+        quit: false,
+        init(){
+        this.canvas = document.querySelector(this.el);
+        this.ctx = this.canvas.getContext("2d");
+        this.reset();
+        requestAnimationFrame(this.render.bind(this));
+        window.addEventListener("resize", this.reset.bind(this));
+        },
+        reset(){
+        this.w = window.innerWidth;
+        this.h = window.innerHeight;
+        this.canvas.width = this.w;
+        this.canvas.height = this.h;
+        this.particles = [];
+        this.mp = Math.ceil(this.w * this.h / this.density);
+        for(var i = 0; i < this.mp; i++)
+        {
+            var size = Math.random()*4+5;
+            this.particles.push({
+            x: Math.random()*this.w, //x-coordinate
+            y: Math.random()*this.h, //y-coordinate
+            w: size,
+            h: size,
+            vy: this.minFallSpeed + Math.random(), //density
+            vx:(Math.random()*this.maxHSpeed) - this.maxHSpeed/2,
+            fill: "#ffffff",
+            s: (Math.random() * 0.2) - 0.1
+            });
+        }
+        },
+        
+        render(){
+        this.ctx.clearRect(0, 0, this.w, this.h);
+        this.particles.forEach((p,i) => {
+            p.y += p.vy;
+            p.x += p.vx;
+            this.ctx.fillStyle = p.fill;
+            this.ctx.fillRect(p.x, p.y, p.w, p.h);
+        if(p.x > this.w+5 || p.x < -5 || p.y > this.h){
+            p.x = Math.random()*this.w;
+            p.y = -10;
+        }
+        });
+        if(this.quit){
+        return;
+        }
+        requestAnimationFrame(this.render.bind(this));
+    },
+    destroy(){
+        this.quit = true;
+    }
+    
+    };
+
+    var confetti = Snow.init();
+    </script>
+
+    <div class="sidenav">
+        <h2>Willem</h2>
+        <h3>[ˈwɪləm]</h3>
+        <a href="#">Linklinklink</a>
+        <a href="#">Linklinklink</a>
+        <a href="#">Linklinklink</a>
+        <a href="#">Linklinklink</a>
+      </div>
+
 
     <div class="container">
-        <aside>
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#">Project 1</a></li>
-                <li><a href="#">Project 2</a></li>
-                <li><a href="#">Project 3</a></li>
-                <li><a href="#">Project 4</a></li>
-                <li><a href="#">Project 5</a></li>
-            </ul>
-        </aside>
-        
+        <!-- Your page content goes here -->
+        <!-- <h1>Your Website Content</h1>
+        <p>This is your webpage content.</p> -->
+    </div>
+   
         <main>
             <section>
-                <h2>About Me</h2>
-                <p>Linguistics student with an affinity for data analytics, fluent in Python, R, SQL</p>
+                <!-- <h2>About Me</h2>
+                <p>Linguistics student with an affinity for data analytics, fluent in Python, R, SQL</p> -->
             </section>
 
             <section>
-                <h2>Contact</h2>
-                <p>Contact information and links to your social profiles.</p>
+                <!-- <h2>Contact</h2>
+                <p>Contact information and links to your social profiles.</p> -->
             </section>
         </main>
     </div>
