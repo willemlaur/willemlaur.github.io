@@ -12,7 +12,7 @@ body::before {
     right: 0;
     bottom: 0;
     border: 2.6vw solid #161515; /* 2% of the viewport width as border width */
-    z-index: 9999; /* Ensure it covers all other elements */
+    z-index: 99; /* Ensure it covers all other elements */
 }
 
 html, body {
@@ -33,6 +33,7 @@ canvas {
 }
 .container {
     width: 96%;
+    z-index:1;           /* Place the element behind normal content */
     height: 90.5vh; /* Use viewport height to ensure the borders at top and bottom */
     margin: 2% auto; /* 2% left and right margin, 2% top margin, 2% bottom margin */
     border: 1.5px solid #fff;
@@ -43,7 +44,7 @@ canvas {
 .sidenav {
     width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
+    z-index: 100; /* Stay on top */
     top: 4%; /* Stay at the top */
     left: 4%;
     background-color: rgba(17, 17, 17, 0); /* Black */
@@ -70,6 +71,7 @@ canvas {
   /* The navigation menu links */
   .sidenav a {
     padding: 6px 8px 6px 16px;
+    z-index: 100;
     text-decoration: none;
     font-size: 25px;
     color: #fff4e4;
