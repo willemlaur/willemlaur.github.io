@@ -43,7 +43,7 @@ canvas {
 }
 
 .sidenav {
-    width: 200px; /* Set the width of the sidebar */
+    width: 500px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 100; /* Stay on top */
     top: 4%; /* Stay at the top */
