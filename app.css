@@ -11,7 +11,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2.5vw solid #161515; /* 2% of the viewport width as border width */
+    border: 2.6vw solid #161515; /* 2% of the viewport width as border width */
     z-index: 9999; /* Ensure it covers all other elements */
 }
 
@@ -33,7 +33,7 @@ canvas {
 }
 .container {
     width: 96%;
-    height: 91vh; /* Use viewport height to ensure the borders at top and bottom */
+    height: 90.5vh; /* Use viewport height to ensure the borders at top and bottom */
     margin: 2% auto; /* 2% left and right margin, 2% top margin, 2% bottom margin */
     border: 1.5px solid #fff;
     box-sizing: border-box;
