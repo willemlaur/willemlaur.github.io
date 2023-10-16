@@ -84,6 +84,18 @@ canvas {
     color: #474141;
   }
   
+  .hometext {
+    width: 120px;
+    position: fixed;
+    padding: 30px 10px 30px 10px;
+    font-size: 15px;
+    line-height: 1.4;
+    z-index: 101;
+    bottom: 4%; /* Stay at the top */
+    right: 4%;
+    color: #fff4e4;
+    
+  }
   /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
